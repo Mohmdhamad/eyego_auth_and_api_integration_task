@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492323940704",
+    "project_id": "eyego-task-324d7",
+    "storage_bucket": "eyego-task-324d7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492323940704:android:b169908dc89511b20e5605",
+        "android_client_info": {
+          "package_name": "com.example.eyego_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrGtPQo6CPhMbfNxAY8COXDxmnVxAhScg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
