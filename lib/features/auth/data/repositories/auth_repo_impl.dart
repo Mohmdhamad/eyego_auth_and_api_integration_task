@@ -2,7 +2,7 @@ import 'package:eyego_task/features/auth/data/data_sources/auth_remote_data_sour
 import 'package:eyego_task/features/auth/domain/entities/user_entity.dart';
 import 'package:eyego_task/features/auth/domain/repositories/auth_repository.dart';
 
-class AuthRepositoryImpl extends AuthRepository {
+class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
 
   AuthRepositoryImpl({required this.remoteDataSource});

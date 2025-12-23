@@ -24,7 +24,7 @@ class RegisterScreen extends StatelessWidget {
                   title: 'Welcome ',
                   subtitle: 'Join Us Now',
                 ),
-                RegisterForm(),
+                const RegisterForm(),
                 AuthFooterAction(
                   question: "Already have an account !",
                   actionText: "Login Now",
