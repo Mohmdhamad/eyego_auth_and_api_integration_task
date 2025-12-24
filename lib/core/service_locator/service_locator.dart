@@ -19,9 +19,7 @@ final sl = GetIt.instance;
 setupConfig() {
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(dio: Dio()));
   sl.registerLazySingleton<AuthRemoteDataSource>(
-    () => AuthRemoteDataSource(
-      firebaseAuth: FirebaseAuth.instance,
-    ),
+    () => AuthRemoteDataSource(firebaseAuth: FirebaseAuth.instance),
   );
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(remoteDataSource: sl<AuthRemoteDataSource>()),
@@ -43,5 +41,4 @@ setupConfig() {
   sl.registerLazySingleton<GetCharactersUseCase>(
     () => GetCharactersUseCase(repository: sl<CharacterRepository>()),
   );
-
 }

@@ -18,9 +18,9 @@ final class RegisterSuccess extends AuthState {
   RegisterSuccess({required this.user});
 }
 
+
 final class AuthFailure extends AuthState {
   final String error;
 
   AuthFailure({required this.error});
-
 }

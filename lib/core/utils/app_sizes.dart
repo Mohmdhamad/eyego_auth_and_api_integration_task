@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppSizes {
+  static late final double _w4;
   static late final double _w8;
   static late final double _w10;
   static late final double _w12;
@@ -9,11 +10,7 @@ class AppSizes {
   static late final double _w20;
   static late final double _w24;
   static late final double _w28;
-  static late final double _w270;
-  static late final double _w285;
-  static late final double _w300;
-  static late final double _w315;
-  static late final double _w325;
+
 
   static late final double _h8;
   static late final double _h10;
@@ -38,6 +35,7 @@ class AppSizes {
 
   static void init() {
     if (_initialized) return;
+    _w4 = 4.w;
     _w8 = 8.w;
     _w10 = 10.w;
     _w12 = 12.w;
@@ -46,11 +44,7 @@ class AppSizes {
     _w20 = 20.w;
     _w24 = 24.w;
     _w28 = 28.w;
-    _w270 = 270.w;
-    _w285 = 285.w;
-    _w300 = 300.w;
-    _w315 = 315.w;
-    _w325 = 325.w;
+
 
     _h8 = 8.h;
     _h10 = 10.h;
@@ -74,6 +68,7 @@ class AppSizes {
     _initialized = true;
   }
 
+  static double get w4 => _w4;
   static double get w8 => _w8;
 
   static double get w10 => _w10;
@@ -90,15 +85,6 @@ class AppSizes {
 
   static double get w28 => _w28;
 
-  static double get w270 => _w270;
-
-  static double get w285 => _w285;
-
-  static double get w300 => _w300;
-
-  static double get w315 => _w315;
-
-  static double get w325 => _w325;
 
   static double get h8 => _h8;
 

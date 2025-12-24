@@ -37,16 +37,19 @@ class _RegisterFormState extends State<RegisterForm> {
           AuthTextFormField(
             controller: _nameController,
             hintText: "enter your name",
+            textStyle: Theme.of(context).textTheme.titleMedium,
             validator: AppValidators.validateName,
           ),
           AuthTextFormField(
             controller: _emailController,
             hintText: "enter your email",
             validator: AppValidators.validateEmail,
+            textStyle: Theme.of(context).textTheme.titleMedium,
           ),
           AuthTextFormField(
             controller: _passwordController,
             isPassword: true,
+            textStyle: Theme.of(context).textTheme.titleMedium,
             isObscureText: true,
             hintText: "enter your password",
             validator: AppValidators.validatePassword,
@@ -54,6 +57,7 @@ class _RegisterFormState extends State<RegisterForm> {
           AuthTextFormField(
             controller: _confirmPasswordController,
             isPassword: true,
+            textStyle: Theme.of(context).textTheme.titleMedium,
             isObscureText: true,
             hintText: "confirm your password",
             validator: (value) => AppValidators.validateConfirmPassword(

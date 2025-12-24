@@ -19,10 +19,12 @@ class AuthFooterAction extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(question,
-            style:Theme.of(context).textTheme.bodyMedium!.copyWith(
-              color: AppColors.grey,
-            )),
+        Text(
+          question,
+          style: Theme.of(
+            context,
+          ).textTheme.bodyMedium!.copyWith(color: AppColors.grey),
+        ),
         Spacer(),
         TextButton(
           onPressed: onPressed,

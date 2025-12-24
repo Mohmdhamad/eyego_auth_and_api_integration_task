@@ -19,14 +19,20 @@ class AuthHeaderMessage extends StatelessWidget {
       spacing: AppSizes.h10,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title, style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-          color: AppColors.yellow,
-          fontWeight: FontWeight.bold,
-        ),),
-        Text(subtitle, style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-          color: AppColors.yellow,
-          fontWeight: FontWeight.w700,
-        )),
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+            color: AppColors.yellow,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          subtitle,
+          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+            color: AppColors.yellow,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
       ],
     );
   }

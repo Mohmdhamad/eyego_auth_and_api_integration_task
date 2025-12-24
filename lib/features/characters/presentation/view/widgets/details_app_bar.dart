@@ -4,7 +4,7 @@ import '../../../../../core/utils/app_colors.dart';
 import '../../../domain/entities/characters_entity.dart';
 
 class DetailsAppBar extends StatelessWidget {
-  const DetailsAppBar({super.key,required this.character});
+  const DetailsAppBar({super.key, required this.character});
   final CharactersEntities character;
   @override
   Widget build(BuildContext context) {
@@ -33,6 +33,5 @@ class DetailsAppBar extends StatelessWidget {
         ),
       ),
     );
-
   }
 }

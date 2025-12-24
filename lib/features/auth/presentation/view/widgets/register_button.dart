@@ -28,11 +28,12 @@ class RegisterButton extends StatelessWidget {
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(SnackBar(content: Text(state.error)));
+          Navigator.pushReplacementNamed(context, Routes.login);
         } else if (state is RegisterSuccess) {
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(SnackBar(content: Text('Register Success')));
-          Navigator.pushReplacementNamed(context, Routes.login);
+          Navigator.pushReplacementNamed(context, Routes.home);
         }
       },
       builder: (context, state) {
@@ -41,11 +42,11 @@ class RegisterButton extends StatelessWidget {
           isLoading: state is AuthLoading,
           onPressed: () {
             if (!formKey.currentState!.validate()) return;
-              context.read<AuthCubit>().register(
-                  name: nameController.text,
-                  email: emailController.text,
-                  password: passwordController.text);
-
+            context.read<AuthCubit>().register(
+              name: nameController.text,
+              email: emailController.text,
+              password: passwordController.text,
+            );
           },
         );
       },

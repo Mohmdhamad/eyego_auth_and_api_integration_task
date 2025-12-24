@@ -40,5 +40,6 @@ class AppRoutes {
           builder: (_) => DetailsScreen(character: character),
         );
     }
+    return null;
   }
 }

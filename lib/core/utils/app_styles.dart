@@ -8,7 +8,7 @@ class AppTheme {
     useMaterial3: true,
     textTheme: TextTheme(
       bodyMedium: TextStyle(
-        fontSize: AppSizes.sp18,
+        fontSize: AppSizes.sp16,
         color: AppColors.black,
         fontWeight: FontWeight.w500,
       ),

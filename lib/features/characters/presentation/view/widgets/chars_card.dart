@@ -14,8 +14,8 @@ class CharsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsetsGeometry.all(AppSizes.h8),
-      padding: EdgeInsetsGeometry.all(AppSizes.w8),
+      margin: EdgeInsetsGeometry.all(AppSizes.w4),
+      padding: EdgeInsetsGeometry.all(AppSizes.w4),
       decoration: BoxDecoration(
         color: AppColors.lightWhite,
         borderRadius: BorderRadius.circular(AppSizes.r15),
