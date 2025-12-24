@@ -31,7 +31,6 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         AppSizes.init();
-
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.appTheme,
