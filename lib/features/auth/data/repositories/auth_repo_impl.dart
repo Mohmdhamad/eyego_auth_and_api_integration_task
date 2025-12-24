@@ -1,6 +1,7 @@
-import 'package:eyego_task/features/auth/data/data_sources/auth_remote_data_source.dart';
-import 'package:eyego_task/features/auth/domain/entities/user_entity.dart';
-import 'package:eyego_task/features/auth/domain/repositories/auth_repository.dart';
+
+import '../data_sources/auth_remote_data_source.dart';
+import '../../domain/entities/user_entity.dart';
+import '../../domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource remoteDataSource;
@@ -19,11 +20,6 @@ class AuthRepositoryImpl implements AuthRepository {
     return response;
   }
 
-  @override
-  Future<UserEntity> loginWithGoogle() {
-    // TODO: implement loginWithGoogle
-    throw UnimplementedError();
-  }
 
   @override
   Future<UserEntity> register({

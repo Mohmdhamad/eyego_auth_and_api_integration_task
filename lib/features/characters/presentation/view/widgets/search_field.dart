@@ -34,9 +34,13 @@ class _SearchWidgetState extends State<SearchWidget> {
       decoration: InputDecoration(
         border: InputBorder.none,
         hintText: 'Find your character',
-        hintStyle: TextStyle(color: AppColors.grey, fontSize: 18),
+        hintStyle: Theme.of(
+          context,
+        ).textTheme.titleLarge!.copyWith(color: AppColors.grey),
       ),
-      style: TextStyle(color: AppColors.grey, fontSize: 18),
+      style: Theme.of(
+        context,
+      ).textTheme.titleLarge!.copyWith(color: AppColors.grey),
       onChanged: (value) {
         context.read<CharactersCubit>().search(value);
       },

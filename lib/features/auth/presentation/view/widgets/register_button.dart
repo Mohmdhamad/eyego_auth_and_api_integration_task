@@ -32,7 +32,7 @@ class RegisterButton extends StatelessWidget {
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(SnackBar(content: Text('Register Success')));
-          Navigator.pushReplacementNamed(context, Routes.home);
+          Navigator.pushReplacementNamed(context, Routes.login);
         }
       },
       builder: (context, state) {

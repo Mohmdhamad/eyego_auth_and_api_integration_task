@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_sizes.dart';
 
 class AuthTextFormField extends StatefulWidget {
   Color? filledColor;
@@ -31,9 +33,9 @@ class AuthTextFormField extends StatefulWidget {
     this.suffixIcon,
     this.isPassword = false,
     this.isObscureText = false,
-    this.filledColor = AppColors.white,
+    this.filledColor = AppColors.lightBlack,
     this.keyboardType = TextInputType.text,
-    this.borderColor = AppColors.black,
+    this.borderColor = AppColors.yellow,
     this.readonly = false,
   });
 
@@ -45,7 +47,7 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 12, bottom: 20),
+      padding: EdgeInsets.only(top: AppSizes.h12, bottom: AppSizes.h20),
       child: TextFormField(
         style: widget.textStyle,
         obscureText: widget.isObscureText,
@@ -75,19 +77,19 @@ class _AuthTextFormFieldState extends State<AuthTextFormField> {
                 )
               : widget.suffixIcon,
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppSizes.r20),
             borderSide: BorderSide(color: widget.borderColor, width: 1),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppSizes.r20),
             borderSide: BorderSide(color: widget.borderColor, width: 1),
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppSizes.r20),
             borderSide: const BorderSide(color: AppColors.red),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppSizes.r20),
             borderSide: const BorderSide(color: AppColors.red),
           ),
         ),

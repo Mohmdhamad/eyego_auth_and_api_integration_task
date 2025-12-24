@@ -1,3 +1,4 @@
+import 'package:eyego_task/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/routes/routes.dart';
@@ -13,11 +14,11 @@ class CharsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsetsGeometry.all(8),
-      padding: EdgeInsetsGeometry.all(4),
+      margin: EdgeInsetsGeometry.all(AppSizes.h8),
+      padding: EdgeInsetsGeometry.all(AppSizes.w8),
       decoration: BoxDecoration(
         color: AppColors.lightWhite,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSizes.r15),
       ),
       child: InkWell(
         onTap: () {
@@ -27,18 +28,16 @@ class CharsCard extends StatelessWidget {
           footer: Hero(
             tag: character.id,
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSizes.w16,
+                vertical: AppSizes.h16,
+              ),
               color: Colors.black54,
               alignment: Alignment.bottomCenter,
               width: double.infinity,
               child: Text(
                 character.name,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  height: 1.3,
-                  fontSize: 16.0,
-                  color: AppColors.white,
-                ),
+                style: Theme.of(context).textTheme.titleMedium,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 textAlign: TextAlign.center,

@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../features/auth/data/data_sources/auth_remote_data_source.dart';
 import '../../features/auth/data/repositories/auth_repo_impl.dart';
@@ -22,12 +21,12 @@ setupConfig() {
   sl.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSource(
       firebaseAuth: FirebaseAuth.instance,
-      googleSignIn: GoogleSignIn.instance,
     ),
   );
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(remoteDataSource: sl<AuthRemoteDataSource>()),
   );
+
   sl.registerLazySingleton<LoginUseCase>(
     () => LoginUseCase(repository: sl<AuthRepository>()),
   );
@@ -44,4 +43,5 @@ setupConfig() {
   sl.registerLazySingleton<GetCharactersUseCase>(
     () => GetCharactersUseCase(repository: sl<CharacterRepository>()),
   );
+
 }

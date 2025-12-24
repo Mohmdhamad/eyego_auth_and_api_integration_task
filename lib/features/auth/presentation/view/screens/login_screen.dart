@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/routes/routes.dart';
+import '../../../../../core/utils/app_sizes.dart';
 import '../widgets/auth_footer.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/login_form.dart';
@@ -11,21 +13,25 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.symmetric(
+          vertical: AppSizes.h28,
+          horizontal: AppSizes.w24,
+        ),
         child: SafeArea(
           top: true,
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const AuthHeaderMessage(
                   title: 'Welcome Back',
                   subtitle: 'Login Now',
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: AppSizes.h20),
                 const LoginForm(),
-                const SizedBox(height: 20),
+                SizedBox(height: AppSizes.h20),
                 AuthFooterAction(
                   question: "Don't have an account ?",
                   actionText: "Register Now",

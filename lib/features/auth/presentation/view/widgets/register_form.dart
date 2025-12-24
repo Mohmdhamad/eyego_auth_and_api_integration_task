@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/app_sizes.dart';
 import '../../../../../core/utils/validator.dart';
 import 'auth_form_field.dart';
 import 'register_button.dart';
@@ -60,7 +61,7 @@ class _RegisterFormState extends State<RegisterForm> {
               _passwordController.text,
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: AppSizes.h20),
           RegisterButton(
             formKey: _formKey,
             nameController: _nameController,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/routes/routes.dart';
+import '../../../../../core/utils/app_sizes.dart';
 import '../widgets/auth_footer.dart';
 import '../widgets/auth_header.dart';
 import '../widgets/register_form.dart';
@@ -12,7 +13,10 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: EdgeInsets.symmetric(
+          vertical: AppSizes.h28,
+          horizontal: AppSizes.w24,
+        ),
         child: SafeArea(
           top: true,
           child: SingleChildScrollView(
@@ -25,6 +29,7 @@ class RegisterScreen extends StatelessWidget {
                   subtitle: 'Join Us Now',
                 ),
                 const RegisterForm(),
+                SizedBox(height: AppSizes.h20),
                 AuthFooterAction(
                   question: "Already have an account !",
                   actionText: "Login Now",

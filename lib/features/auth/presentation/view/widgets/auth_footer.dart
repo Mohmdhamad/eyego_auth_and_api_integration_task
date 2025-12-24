@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/app_colors.dart';
 
 class AuthFooterAction extends StatelessWidget {
@@ -18,17 +19,18 @@ class AuthFooterAction extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(question, style: TextStyle(fontSize: 14, color: AppColors.black)),
+        Text(question,
+            style:Theme.of(context).textTheme.bodyMedium!.copyWith(
+              color: AppColors.grey,
+            )),
         Spacer(),
         TextButton(
           onPressed: onPressed,
           child: Text(
             actionText,
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.blue,
-              fontWeight: FontWeight.w600,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium!.copyWith(color: AppColors.blue),
           ),
         ),
       ],

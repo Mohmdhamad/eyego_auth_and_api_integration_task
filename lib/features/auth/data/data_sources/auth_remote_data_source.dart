@@ -1,15 +1,10 @@
 import 'package:eyego_task/features/auth/data/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRemoteDataSource {
   final FirebaseAuth firebaseAuth;
-  final GoogleSignIn googleSignIn;
 
-  AuthRemoteDataSource({
-    required this.firebaseAuth,
-    required this.googleSignIn,
-  });
+  AuthRemoteDataSource({required this.firebaseAuth});
 
   Future<UserModel> login({
     required String email,
@@ -19,27 +14,12 @@ class AuthRemoteDataSource {
       email: email,
       password: password,
     );
+    final user = response.user!;
+    if (!user.emailVerified) {
+      throw Exception('Email not verified');
+    }
     return UserModel.fromFirebase(response.user!);
   }
-
-  // Future<UserModel> loginWithGoogle() async {
-  //   final googleUser = await googleSignIn.signIn();
-  //   if (googleUser == null) {
-  //     throw Exception('Google sign in aborted');
-  //   }
-  //
-  //   final googleAuth = await googleUser.authentication;
-  //
-  //   final credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth.accessToken,
-  //     idToken: googleAuth.idToken,
-  //   );
-  //
-  //   final result =
-  //   await firebaseAuth.signInWithCredential(credential);
-  //
-  //   return UserModel.fromFirebase(result.user!);
-  // }
 
   Future<UserModel> register({
     required String name,
@@ -50,7 +30,13 @@ class AuthRemoteDataSource {
       email: email,
       password: password,
     );
-    response.user!.updateDisplayName(name);
+    await response.user!.updateDisplayName(name);
+    await response.user!.sendEmailVerification();
+    final user = response.user!;
+    await user.reload();
+    if (!user.emailVerified) {
+      throw Exception('Please verify your email');
+    }
     return UserModel.fromFirebase(response.user!);
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_sizes.dart';
 import '../../../../../core/utils/validator.dart';
 import 'auth_form_field.dart';
 import 'login_button.dart';
@@ -31,6 +33,7 @@ class _LoginFormState extends State<LoginForm> {
         children: [
           AuthTextFormField(
             controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
             hintText: "enter your password",
             validator: AppValidators.validateEmail,
           ),
@@ -41,7 +44,7 @@ class _LoginFormState extends State<LoginForm> {
             hintText: "enter your password",
             validator: AppValidators.validatePassword,
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: AppSizes.h20),
           LoginButton(
             formKey: _formKey,
             emailController: _emailController,

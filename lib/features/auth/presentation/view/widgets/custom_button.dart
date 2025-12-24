@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_sizes.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -28,12 +29,12 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? double.infinity,
-      height: height ?? 60,
+      height: height ?? AppSizes.h60,
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: _buildButtonStyle(),
         child: isLoading
-            ? _LoadingIndicator(color: textColor ?? AppColors.white)
+            ? _LoadingIndicator(color: textColor ?? AppColors.grey)
             : _ButtonTitle(text: text),
       ),
     );
@@ -46,10 +47,12 @@ ButtonStyle _buildButtonStyle({
   EdgeInsetsGeometry? padding,
 }) {
   return ElevatedButton.styleFrom(
-    backgroundColor: backgroundColor ?? AppColors.blue,
-    foregroundColor: textColor ?? AppColors.white,
-    padding: padding ?? EdgeInsets.symmetric(vertical: 16),
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    backgroundColor: backgroundColor ?? AppColors.yellow,
+    foregroundColor: textColor ?? AppColors.black,
+    padding: padding ?? EdgeInsets.symmetric(vertical: AppSizes.h16),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(AppSizes.r20),
+    ),
   );
 }
 
@@ -63,7 +66,7 @@ class _ButtonTitle extends StatelessWidget {
     return Center(
       child: Text(
         text,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }
@@ -78,8 +81,8 @@ class _LoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 20,
-        height: 20,
+        width: AppSizes.w20,
+        height: AppSizes.w20,
         child: CircularProgressIndicator(
           strokeWidth: 2,
           valueColor: AlwaysStoppedAnimation<Color>(color),
